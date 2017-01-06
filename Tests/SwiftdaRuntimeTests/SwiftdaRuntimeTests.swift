@@ -4,7 +4,7 @@ import XCTest
 class SwiftdaRuntimeTests: XCTestCase {
     func testExample() throws {
         let pipe = Pipe()
-        let input: [String: Any] = ["event": ["hello": "world"], "context": 123]
+        let input: [String: Any] = ["event": ["hello": "world"], "context": ["millis": 123]]
         let inputData = try JSONSerialization.data(withJSONObject: input, options: [])
         pipe.fileHandleForWriting.write(inputData)
         pipe.fileHandleForWriting.closeFile()
