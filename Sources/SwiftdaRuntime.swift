@@ -12,7 +12,11 @@ public struct SwiftdaRuntime {
         self.inputHandle = inputHandle
         self.outputHandle = outputHandle
         self.finisher = { exit(0) }
-        self.waiter = { dispatchMain() }
+        self.waiter = {
+            #if !os(Linux)
+            dispatchMain()
+            #endif
+        }
     }
     
     public func run(_ function: Entrypoint) {
