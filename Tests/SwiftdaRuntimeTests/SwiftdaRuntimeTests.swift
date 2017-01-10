@@ -9,10 +9,11 @@ class SwiftdaRuntimeTests: XCTestCase {
         pipe.fileHandleForWriting.write(inputData)
         pipe.fileHandleForWriting.closeFile()
         
-        let runtime = SwiftdaRuntime(inputHandle: pipe.fileHandleForReading, outputHandle: FileHandle.nullDevice)
-        runtime.run { event, context in
+        var runtime = SwiftdaRuntime(inputHandle: pipe.fileHandleForReading, outputHandle: FileHandle.nullDevice)
+        runtime.waiter = {}
+        runtime.finisher = {}
+        runtime.run { event, context, callback in
             XCTAssertEqual(event as! [String: String], ["hello": "world"])
-            return nil
         }
     }
 
