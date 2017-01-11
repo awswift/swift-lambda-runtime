@@ -29,6 +29,10 @@ def doit() {
     stage('tests') {
         sh 'swift test'
     }
+
+    stage('linux test') {
+        sh 'docker build -f Dockerfile.linuxci .'
+    }
 }
 
 def checks(name) {

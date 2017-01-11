@@ -1,0 +1,5 @@
+FROM awswift/swiftda:0.1
+WORKDIR /build
+COPY . .
+RUN swift build
+RUN swift test
