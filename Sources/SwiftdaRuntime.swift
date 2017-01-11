@@ -1,7 +1,7 @@
 import Foundation
 
 public struct SwiftdaRuntime {
-    typealias Entrypoint = (_ event: [String: Any], _ context: [String: Any], _ callback: (Any?) -> Void) -> Void
+    public typealias Entrypoint = (_ event: [String: Any], _ context: [String: Any], _ callback: (Any?) -> Void) -> Void
     
     public let inputHandle: FileHandle
     public let outputHandle: FileHandle
