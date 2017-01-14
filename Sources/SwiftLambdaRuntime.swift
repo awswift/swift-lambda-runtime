@@ -1,6 +1,6 @@
 import Foundation
 
-public struct SwiftdaRuntime {
+public struct SwiftLambdaRuntime {
     public typealias Entrypoint = (_ event: [String: Any], _ context: [String: Any], _ callback: (Any?) -> Void) -> Void
     
     public let inputHandle: FileHandle

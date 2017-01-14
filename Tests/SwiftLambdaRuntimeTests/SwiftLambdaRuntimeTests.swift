@@ -1,8 +1,8 @@
 import Foundation
 import XCTest
-@testable import SwiftdaRuntime
+@testable import SwiftLambdaRuntime
 
-class SwiftdaRuntimeTests: XCTestCase {
+class SwiftLambdaRuntimeTests: XCTestCase {
     func testExample() throws {
         let pipe = Pipe()
         let input: [String: Any] = ["event": ["hello": "world"], "context": ["millis": 123]]
@@ -10,7 +10,7 @@ class SwiftdaRuntimeTests: XCTestCase {
         pipe.fileHandleForWriting.write(inputData)
         pipe.fileHandleForWriting.closeFile()
         
-        var runtime = SwiftdaRuntime(inputHandle: pipe.fileHandleForReading, outputHandle: FileHandle.nullDevice)
+        var runtime = SwiftLambdaRuntime(inputHandle: pipe.fileHandleForReading, outputHandle: FileHandle.nullDevice)
         runtime.waiter = {}
         runtime.finisher = {}
         runtime.run { event, context, callback in
@@ -19,7 +19,7 @@ class SwiftdaRuntimeTests: XCTestCase {
     }
 
 
-    static var allTests : [(String, (SwiftdaRuntimeTests) -> () throws -> Void)] {
+    static var allTests : [(String, (SwiftLambdaRuntimeTests) -> () throws -> Void)] {
         return [
             ("testExample", testExample),
         ]

@@ -1,6 +1,6 @@
 import XCTest
-@testable import SwiftdaRuntimeTests
+@testable import SwiftLambdaRuntimeTests
 
 XCTMain([
-     testCase(SwiftdaRuntimeTests.allTests),
+     testCase(SwiftLambdaRuntimeTests.allTests),
 ])

@@ -1,5 +1,5 @@
-Runtime helper library for the [Swiftda][swiftda] Swift-on-AWS Lambda project.
+Runtime helper library for the [swift-lambda][swift-lambda] Swift-on-AWS Lambda project.
 
-[swiftda]: https://github.com/awswift/swiftda/
+[swift-lambda]: https://github.com/awswift/swift-lambda/
 
-[![Build Status](https://jenkins.awswift.ge.cx/buildStatus/icon?job=awswift/swiftda-runtime/master)](https://jenkins.awswift.ge.cx/job/awswift/job/swiftda-runtime/job/master/)
+[![Build Status](https://jenkins.awswift.ge.cx/buildStatus/icon?job=awswift/swift-lambda-runtime/master)](https://jenkins.awswift.ge.cx/job/awswift/job/swift-lambda-runtime/job/master/)
